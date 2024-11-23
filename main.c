@@ -82,7 +82,7 @@ int loginuser(char *username, char *password) {
 
 
 void soal_mudah(){
-    int total_score = 0;
+    int total_skor = 0;
     char jawaban;
 
     printf ("\n*easy level*\n");
@@ -100,7 +100,7 @@ void soal_mudah(){
     getchar(); // membaca atau membuang karakter yang tidak dibutuhkan
     if (jawaban == 'C'){
         print ("Yeyy!,jawaban anda benar!\n");
-        total_score += 100;
+        total_skor += 100;
     } 
     else {
         printf ("jawaban anda salah.\n");
@@ -118,7 +118,7 @@ void soal_mudah(){
     getchar();
     if (jawaban == 'D'){
         printf ("Horee!!, jawaban anda benar!\n");
-        total_score += 100;
+        total_skor += 100;
     }
     else {
         printf ("jawaban anda salah.\n");
@@ -136,7 +136,7 @@ void soal_mudah(){
     getchar();
     if (jawaban == 'B'){
         printf ("Mantap!, jawaban anda benar!\n");
-        total_score += 100;
+        total_skor += 100;
     }
     else {
         printf ("jawaban anda salah.\n");
@@ -154,7 +154,7 @@ void soal_mudah(){
     getchar();
     if (jawaban == 'A'){
         printf ("Keren!!, jawaban anda benar!\n");
-        total_score += 100;
+        total_skor += 100;
     }
     else {
         printf ("jawaban anda salah.\n");
@@ -172,7 +172,7 @@ void soal_mudah(){
     getchar();
     if (jawaban == 'D') {
         printf ("Hebat!, jawaban anda benar!\n");
-        total_score += 100;
+        total_skor += 100;
     }
     else {
         printf ("jawaban anda salah.\n");

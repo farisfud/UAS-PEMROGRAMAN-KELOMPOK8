@@ -55,7 +55,7 @@ void registrasiuser() {
     fwrite(&user, sizeof(pengguna), 1, registrasi);
     fclose(registrasi);
 
-    printf("Registrasi berhasil! Silakan login.\n");
+    printf("REGISTRASI BERHASIL! SILAHKAN LOGIN.\n");
 }
 
 int loginuser(char *username, char *password) {

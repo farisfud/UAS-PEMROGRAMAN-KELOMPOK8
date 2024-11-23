@@ -42,11 +42,15 @@ void registrasiuser() {
         exit(1);
     }
 
-    printf("-------- Registrasi --------\n");
-    printf("Masukkan username: ");
+    printf("\n === PROYEK PRAKTIKUM PEMROGRAMAN KELOMPOK 8 ===\n\n\n\n");
+    printf("                  |REGISTRASI|                 \n\n");
+    printf("  ===============================================\n");
+    printf("  *                 PETUNJUK:                   *\n");
+    printf("*  MASUKKAN USERNAME:   *\n");
     scanf("%s", user.username);
-    printf("Masukkan password: ");
+    printf("*  MASUKKAN PASSWORD:   *\n");
     scanf("%s", user.password);
+    printf("   ==============================================\n\n");
 
     fwrite(&user, sizeof(pengguna), 1, registrasi);
     fclose(registrasi);

@@ -65,7 +65,7 @@ int loginuser(char *username, char *password) {
     login = fopen("database/login.bin", "rb");
     if (login == NULL) {
         printf("Database tidak ditemukan, silakan registrasi terlebih dahulu.\n");
-        exit(1);
+        return 0;
     }
 
     while (fread(&user, sizeof(pengguna), 1, login)) {
@@ -125,7 +125,7 @@ void soal_mudah(){
     scanf ("%c", &jawaban);
     getchar(); // membaca atau membuang karakter yang tidak dibutuhkan
     if (jawaban == 'C'){
-        print ("Yeyy!,jawaban anda benar!\n");
+        printf ("Yeyy!,jawaban anda benar!\n");
         total_skor += 100;
     } 
     else {
@@ -316,13 +316,10 @@ void soal_sulit() {
 
 
 void main_kuis() {
+    soal_mudah();
     soal_sulit();
 }
 
-int main() {
-    main_kuis();
-    return 0;
-}
 
 int main(int argc, char *argv[]) {
     char username[50], password[50];

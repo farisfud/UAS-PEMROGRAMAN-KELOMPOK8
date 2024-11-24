@@ -46,9 +46,9 @@ void registrasiuser() {
     printf("                  |REGISTRASI|                 \n\n");
     printf("  ===============================================\n");
     printf("  *                 PETUNJUK:                   *\n");
-    printf("*  MASUKKAN USERNAME:   *\n");
+    printf("  MASUKKAN USERNAME:   ");
     scanf("%s", user.username);
-    printf("*  MASUKKAN PASSWORD:   *\n");
+    printf("  MASUKKAN PASSWORD:   ");
     scanf("%s", user.password);
     printf("   ==============================================\n\n");
 

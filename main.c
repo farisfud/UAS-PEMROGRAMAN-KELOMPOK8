@@ -79,6 +79,32 @@ int loginuser(char *username, char *password) {
     return 0;  // login gagal
 }
 
+void clearScreen() {
+    #ifdef _WIN32
+        system("cls");
+    #else
+        system("clear");
+    #endif
+}
+
+void printLine() {
+    printf("==========================================\n");
+}
+
+void tampilkanPeraturan() {
+    clearScreen();
+    printLine();
+    printf("           WELCOME TO THE QUIZ GAME!      \n");
+    printLine();
+    printf("Peraturan:\n");
+    printf("1. Jawab setiap pertanyaan dengan memilih A, B, C, atau D.\n");
+    printf("2. Setiap jawaban benar meningkatkan hadiah Anda.\n");
+    printf("3. Jika salah menjawab, permainan berakhir, dan hadiah Anda turun.\n");
+    printf("4. Anda memiliki satu bantuan 50:50 untuk menghilangkan dua opsi salah.\n");
+    printLine();
+    printf("Tekan ENTER untuk memulai...\n");
+    getchar();
+}
 
 
 void soal_mudah(){
@@ -180,7 +206,7 @@ void soal_mudah(){
 
     //menampilkan hasil akhir
     printf ("Kuis telah selesai\n");
-    printf ("Point akhir anda : %d point.\n", total_score);
+    printf ("Point akhir anda : %d point.\n", total_skor);
     printf ("\nTerima Kasih sudah bermain!!\n");
 }
 
@@ -298,6 +324,34 @@ int main() {
     return 0;
 }
 
+int main(int argc, char *argv[]) {
+    char username[50], password[50];
+    if (argc < 3) {
+        printf("Gunakan format: %s <username> <password>\n", argv[0]);
+        return 1;
+    }
+
+    strcpy(username, argv[1]);
+    strcpy(password, argv[2]);
+
+    if (loginuser(username, password)) {
+        printf("Login berhasil! Selamat datang, %s.\n", username);
+        tampilkanPeraturan();
+        soal_mudah();
+        soal_sulit();
+    } else {
+        printf("Login gagal! Username atau password salah.\n");
+        printf("Jika Anda belum terdaftar, lakukan registrasi terlebih dahulu.\n");
+        printf("Ingin mendaftar (Y/T)? ");
+        char opsi;
+        scanf(" %c", &opsi);
+        if (opsi == 'Y' || opsi == 'y') {
+            registrasiuser();
+        }
+    }
+
+    return 0;
+}
 
 
         
